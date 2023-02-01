@@ -1,0 +1,53 @@
+<section class="container-sm">
+  <section class="d-flex justify-content-center p-3">
+    <section class="col-3 gap-2">
+      <form action="" class="caja_form shadow p-4">
+        <h2 class="text-center">Iniciar sesion</h2>
+        <section class="cuadro_imagen animate__animated animate__swing">
+          <img src="./assets/certus_image.png" alt="imagen_certus" >
+        </section>
+
+        <section class="form-group mb-3 mt-3">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control " id="username" [(ngModel)]="name" #nombre="ngModel" name="nombre" required>
+
+
+        </section>
+        <section class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="password" #passw="ngModel" name="passw" required>
+
+
+
+        </section>
+        <section class="btn-group justify-content-center d-flex flex-column">
+          <input class="btn btn-outline-primary mt-3" (click)="login()" value="Login" type="submit">
+        </section>
+      </form>
+      </section>
+  </section>
+</section>
+
+
+<section *ngIf="!nombre.valid && (nombre.dirty || nombre.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+  <section *ngIf="nombre.errors?.['required']">
+    El campo usuario es requerido
+  </section>
+</section>
+
+
+<section *ngIf="!passw.valid && (passw.dirty || passw.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+  <section *ngIf="passw.errors?.['required']">
+    El campo passw es requerido
+  </section>
+
+  <section *ngIf="passw.errors?.['minLength']">
+    El campo debe tener más de 3 digitos
+  </section>
+</section>
+
+<section *ngIf="mensaje>datos.length">
+  <section class="alert alert-warning">
+    datos incorrectos
+  </section>
+</section>

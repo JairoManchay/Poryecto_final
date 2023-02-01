@@ -1,0 +1,27 @@
+<section class="container-sm">
+  <section class="row d-flex justify-content-center mt-3 animate__animated animate__backInDown">
+    <h2 class="text-center">Lista Usuarios</h2>
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listadoData">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.username}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.website}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>

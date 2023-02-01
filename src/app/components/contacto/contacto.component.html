@@ -1,0 +1,57 @@
+<h3>Enviamos tus sugerencias</h3>
+<section class="container">
+  <article class="row d-flex justify-content-center">
+    <form action="" #formulario="ngForm" class="p-3">
+      <section>
+        <label for="username">First Name:</label>
+        <input type="text" class="form-control "  [(ngModel)]="firstName" #first="ngModel" name="first" required>
+
+        <section *ngIf="!first.valid && (first.dirty || first.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+          <section *ngIf="first.errors?.['required']">
+            El campo usuario es requerido
+          </section>
+        </section>
+      </section>
+
+      <section>
+        <label for="username">last Name:</label>
+        <input type="text" class="form-control "  [(ngModel)]="lastName" #last="ngModel" name="last" required>
+
+        <section *ngIf="!last.valid && (last.dirty || last.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+          <section *ngIf="last.errors?.['required']">
+            El campo usuario es requerido
+          </section>
+        </section>
+      </section>
+
+      <section>
+        <label for="username">Username:</label>
+        <input type="text" class="form-control " [(ngModel)]="userName" #user="ngModel" name="user" required>
+
+        <section *ngIf="!user.valid && (user.dirty || user.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+          <section *ngIf="user.errors?.['required']">
+            El campo usuario es requerido
+          </section>
+        </section>
+
+      </section>
+
+      <section>
+
+        <label for="username">Password:</label>
+        <input type="password" class="form-control " [(ngModel)]="password" #passw="ngModel" name="passw" required>
+
+        <section *ngIf="!passw.valid && (passw.dirty || passw.touched)" class="alert alert-danger mb-3 alert-dismissible fade show">
+          <section *ngIf="passw.errors?.['required']">
+            El campo usuario es requerido
+          </section>
+        </section>
+      </section>
+
+      <section class="btn btn-group d-flex justify-content-center">
+        <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!formulario.valid" (click)="EnviarMensaje()">
+      </section>
+    </form>
+  </article>
+
+</section>
